@@ -85,7 +85,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>com.javadev.smallbank.app.Application</mainClass>
+                            <mainClass>com.imagestoragesystem.app.Application</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
