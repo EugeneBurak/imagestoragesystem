@@ -1,9 +1,9 @@
 package com.imagestoragesystem.tests;
 
-
 import com.imagestoragesystem.storage.StorageFileNotFoundException;
 import com.imagestoragesystem.storage.StorageService;
 import org.hamcrest.Matchers;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -12,7 +12,6 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.mock.web.MockMultipartFile;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
-import org.testng.annotations.Test;
 
 import java.nio.file.Paths;
 import java.util.stream.Stream;
@@ -27,7 +26,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @AutoConfigureMockMvc
 @SpringBootTest
 public class FileUploadTests {
-
 
     @Autowired
     private MockMvc mvc;
@@ -65,4 +63,5 @@ public class FileUploadTests {
 
         this.mvc.perform(get("/files/test.txt")).andExpect(status().isNotFound());
     }
+
 }

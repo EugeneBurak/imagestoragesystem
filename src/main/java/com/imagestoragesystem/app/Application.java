@@ -1,18 +1,18 @@
 package com.imagestoragesystem.app;
 
+import com.imagestoragesystem.storage.StorageProperties;
 import com.imagestoragesystem.storage.StorageService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.PropertySource;
 
-//import com.imagestoragesystem.storage.StorageProperties;
-
 @SpringBootApplication
-//@EnableConfigurationProperties(StorageProperties.class)
-@ComponentScan(basePackages = "com.imagestoragesystem.controller, com.imagestoragesystem.storage")
+@EnableConfigurationProperties(StorageProperties.class)
+@ComponentScan(basePackages = "com.imagestoragesystem.controller")
 @PropertySource("classpath:application.properties")
 public class Application {
 
@@ -27,5 +27,22 @@ public class Application {
             storageService.init();
         };
     }
+}
+
+
+
+/*
+@SpringBootApplication
+@EnableConfigurationProperties(StorageService.class)
+@ComponentScan(basePackages = "com.imagestoragesystem.controller")
+@PropertySource("classpath:application.properties")
+
+public class Application {
+
+    public static void main(String[] args) {
+        SpringApplication.run(Application.class, args);
+    }
+
 
 }
+*/
