@@ -12,7 +12,7 @@ import org.springframework.context.annotation.PropertySource;
 
 @SpringBootApplication
 @EnableConfigurationProperties(StorageProperties.class)
-@ComponentScan(basePackages = "com.imagestoragesystem.controller")
+@ComponentScan(basePackages = "com.imagestoragesystem.controller, com.imagestoragesystem.storage")
 @PropertySource("classpath:application.properties")
 public class Application {
 
@@ -28,21 +28,3 @@ public class Application {
         };
     }
 }
-
-
-
-/*
-@SpringBootApplication
-@EnableConfigurationProperties(StorageService.class)
-@ComponentScan(basePackages = "com.imagestoragesystem.controller")
-@PropertySource("classpath:application.properties")
-
-public class Application {
-
-    public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
-    }
-
-
-}
-*/
